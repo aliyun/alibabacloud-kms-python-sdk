@@ -1,5 +1,5 @@
 Alibaba Cloud KMS SDK for Python
-======
+================================
 
 |image0|
 
@@ -14,25 +14,25 @@ languages:*\ `English <README.rst>`__\ *,*\ `简体中文 <README.zh-cn.rst>`__
 -  `Release <https://github.com/aliyun/alibabacloud-kms-python-sdk/releases>`__
 
 License
-------
+-------
 
 `Apache License
 2.0 <https://www.apache.org/licenses/LICENSE-2.0.html>`__
 
 Requirements
-------
+------------
 
 -  Python 3.6 or later
 
 Install
-------
+-------
 
 ::
 
    pip install alibabacloud-kms-python-sdk
 
 Client Mechanism
-------
+----------------
 Alibaba Cloud KMS SDK for Python transfers the the following methods of request to KMS instance vpc gateway by default.
 
 -  Encrypt
@@ -51,7 +51,7 @@ You could use Alibaba Cloud KMS SDK for Python with the given parameter to send 
 
 - Refer to the following code to forward calls from all of these interfaces to the KMS shared gateway. Take GetSecretValue as an example.
 
-.. code-block:: python
+.. code:: python
 
    from alibabacloud_kms20160120 import models as kms_20160120_models
    from alibabacloud_tea_openapi import models as open_api_models
@@ -106,7 +106,7 @@ You could use Alibaba Cloud KMS SDK for Python with the given parameter to send 
 
 - Refer to the following code to transfer the GetSecretValue request to the KMS shared gateway.
 
-.. code-block:: python
+.. code:: python
 
    from alibabacloud_kms20160120 import models as kms_20160120_models
    from alibabacloud_tea_openapi import models as open_api_models
@@ -163,7 +163,7 @@ You could use Alibaba Cloud KMS SDK for Python with the given parameter to send 
 
 - Refer to the following code to transfer a single request to the KMS shared gateway.
 
-.. code-block:: python
+.. code:: python
 
    from alibabacloud_kms20160120 import models as kms_20160120_models
    from alibabacloud_tea_openapi import models as open_api_models
@@ -219,13 +219,13 @@ You could use Alibaba Cloud KMS SDK for Python with the given parameter to send 
 
 
 Sample Code (take the Encrypt interface as an example)
-------
+------------------------------------------------------
 You can select reference examples to call KMS services according to different scenarios
-~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Scenario 1 The new user can refer to the following code to call the service of the KMS instance vpc gateway.
-^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: python
+.. code:: python
 
    from alibabacloud_kms20160120 import models as kms_20160120_models
    from alibabacloud_kms_kms20160120.client import Client as KmsClient
@@ -283,15 +283,15 @@ Scenario 1 The new user can refer to the following code to call the service of t
    encrypt_sample()
 
 Scenario 2 Veteran users can refer to the following sample code of two different scenarios to call KMS services.
-^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Solution 1 Before key migration, replace the old SDK (KMS20160120) with the cost SDK, and then use the KMS shared gateway to access KMS services.
              After the key is migrated, replace the KMS shared gateway with a KMS instance vpc gateway to access KMS services.
 - Solution 2 After key migration, replace the old SDK (KMS20160120) with the cost SDK and use the KMS instance vpc gateway to access KMS services.
 
 The sample code before key migration is as follows:
-######
+'''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. code-block:: python
+.. code:: python
 
     from alibabacloud_kms20160120 import models as kms_20160120_models
     from alibabacloud_kms_kms20160120.client import Client as KmsClient
@@ -332,9 +332,9 @@ The sample code before key migration is as follows:
             print(str(e))
 
 The sample code after key migration is as follows:
-######
+''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. code-block:: python
+.. code:: python
 
     from alibabacloud_kms20160120 import models as kms_20160120_models
     from alibabacloud_kms_kms20160120.client import Client as KmsClient
@@ -389,11 +389,11 @@ The sample code after key migration is as follows:
 
 
 Character encoding setting instructions (default UTF-8)
-------
+------------------------------------------------------
 
 - You can refer to the following code example to set the global character set encoding.
 
-.. code-block:: python
+.. code:: python
 
     from alibabacloud_kms20160120 import models as kms_20160120_models
     from alibabacloud_kms_kms20160120.client import Client as KmsClient
@@ -451,7 +451,7 @@ Character encoding setting instructions (default UTF-8)
 
 - You can refer to the following code example to set the character set encoding for a single request.
 
-.. code-block:: python
+.. code:: python
 
     from alibabacloud_kms20160120 import models as kms_20160120_models
     from alibabacloud_kms_kms20160120.client import Client as KmsClient
@@ -513,7 +513,7 @@ Character encoding setting instructions (default UTF-8)
 .. _license-1:
 
 License
-------
+-------
 
 `Apache-2.0 <http://www.apache.org/licenses/LICENSE-2.0>`__
 

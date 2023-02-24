@@ -1,5 +1,5 @@
 阿里云KMS Python SDK
-======
+====================
 
 |image0|
 
@@ -19,7 +19,7 @@
 2.0 <https://www.apache.org/licenses/LICENSE-2.0.html>`__
 
 软件要求
-------
+--------
 
 -  Python 3.6 or later
 
@@ -31,7 +31,7 @@
    pip install alibabacloud-kms-python-sdk
 
 客户端机制
-------
+----------
 
 阿里云KMS Python SDK默认情况下会将以下方法的请求转发到KMS实例网关.
 
@@ -50,7 +50,7 @@
 
 - 参考如下代码将上述所有接口的调用转发到KMS共享网关。以GetSecretValue为例。
 
-.. code-block:: python
+.. code:: python
 
    from alibabacloud_kms20160120 import models as kms_20160120_models
    from alibabacloud_tea_openapi import models as open_api_models
@@ -105,7 +105,7 @@
 
 - 参考如下代码将指定方法调用转发到KMS共享网关。以GetSecretValue为例。
 
-.. code-block:: python
+.. code:: python
 
    from alibabacloud_kms20160120 import models as kms_20160120_models
    from alibabacloud_tea_openapi import models as open_api_models
@@ -162,7 +162,7 @@
 
 - 参考如下的代码将单独一次调用转发到KMS共享网关。以GetSecretValue为例。
 
-.. code-block:: python
+.. code:: python
 
    from alibabacloud_kms20160120 import models as kms_20160120_models
    from alibabacloud_tea_openapi import models as open_api_models
@@ -218,13 +218,13 @@
 
 
 示例代码(以Encrypt接口为例)
-------
+---------------------------
 用户可根据不同的场景选择参考示例调用KMS服务
-~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 场景一 新接入用户可以参考下面的代码调用KMS实例网关的服务。
-^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: python
+.. code:: python
 
    from alibabacloud_kms20160120 import models as kms_20160120_models
    from alibabacloud_kms_kms20160120.client import Client as KmsClient
@@ -272,15 +272,15 @@
    encrypt_sample()
 
 场景二 老用户可参考以下两种不同方案的示例代码调用KMS服务。
-^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - 方案一 在密钥迁移前，先将旧的sdk(kms20160120)替换成本sdk，然后依然使用KMS共享网关访问KMS服务，示例代码参考密钥迁移前。
         在密钥迁移后，再将KMS共享网关替换成KMS实例网关访问KMS服务，示例代码参考密钥迁移后。
 - 方案二 在密钥迁移后，直接将旧的sdk(kms20160120)替换成本sdk，使用KMS实例网关访问KMS服务，示例代码参考密钥迁移后。
 
 密钥迁移前示例代码如下：
-######
+''''''''''''''''''''''''
 
-.. code-block:: python
+.. code:: python
 
     from alibabacloud_kms20160120 import models as kms_20160120_models
     from alibabacloud_kms_kms20160120.client import Client as KmsClient
@@ -320,9 +320,9 @@
             print(str(e))
 
 密钥迁移后示例代码如下:
-######
+''''''''''''''''''''''''
 
-.. code-block:: python
+.. code:: python
 
     from alibabacloud_kms20160120 import models as kms_20160120_models
     from alibabacloud_kms_kms20160120.client import Client as KmsClient
@@ -377,10 +377,10 @@
 
 
 字符编码设置说明(默认为UTF-8)
-------
+-----------------------------
 - 您可以参考以下代码示例，设置全局的字符集编码。
 
-.. code-block:: python
+.. code:: python
 
     from alibabacloud_kms20160120 import models as kms_20160120_models
     from alibabacloud_kms_kms20160120.client import Client as KmsClient
@@ -437,7 +437,7 @@
 
 - 您可以参考以下代码示例，设置单独一次请求的字符集编码。
 
-.. code-block:: python
+.. code:: python
 
     from alibabacloud_kms20160120 import models as kms_20160120_models
     from alibabacloud_kms_kms20160120.client import Client as KmsClient
