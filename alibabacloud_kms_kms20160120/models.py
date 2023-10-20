@@ -25,7 +25,7 @@ class KmsConfig(dkms_models.Config):
             client_key_content=None,
             password=None,
             default_kms_api_names=None,
-            encoding=None
+            encoding=None, advance_switch=True
     ):
         super(KmsConfig, self).__init__(
             access_key_id=client_key_id,
@@ -50,6 +50,7 @@ class KmsConfig(dkms_models.Config):
         )
         self.default_kms_api_names = default_kms_api_names
         self.encoding = encoding
+        self.advance_switch = advance_switch
 
     def validate(self):
         pass
