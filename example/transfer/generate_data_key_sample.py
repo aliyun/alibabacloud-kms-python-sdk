@@ -2,9 +2,9 @@
 import os
 
 from alibabacloud_kms20160120 import models as kms_20160120_models
+from alibabacloud_kms_kms20160120.transfer_client import TransferClient
 from alibabacloud_tea_openapi import models as open_api_models
 
-from alibabacloud_kms_kms20160120.client import Client
 from alibabacloud_kms_kms20160120.models import KmsConfig, KmsRuntimeOptions
 
 
@@ -21,7 +21,7 @@ def new_user_generate_data_key_sample():
         # 设置kms实例服务地址
         endpoint='<your-kms-instance-endpoint>'
     )
-    client = Client(kms_config=kms_config)
+    client = TransferClient(kms_config=kms_config)
     generate_data_key(client)
 
 
@@ -36,7 +36,7 @@ def before_migrate_generate_data_key_sample():
         # 设置访问凭证AccessKeySecret
         access_key_secret=os.getenv('ACCESS_KEY_SECRET')
     )
-    client = Client(config=config)
+    client = TransferClient(config=config)
     generate_data_key(client)
 
 
@@ -62,7 +62,7 @@ def after_migrate_generate_data_key_sample():
         # 设置kms实例服务地址
         endpoint='<your-kms-instance-endpoint>'
     )
-    client = Client(config=config, kms_config=kms_config)
+    client = TransferClient(config=config, kms_config=kms_config)
     generate_data_key(client)
 
 
