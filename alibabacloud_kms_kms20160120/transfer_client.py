@@ -72,7 +72,7 @@ class TransferClient(OpenApiClient):
             GetPublicKeyTransferHandler(self.client, GET_PUBLIC_KEY_API_NAME, self.kms_config)
         self.handlers[GET_SECRET_VALUE_API_NAME] = \
             GetSecretValueTransferHandler(self.client, GET_SECRET_VALUE_API_NAME, self.kms_config)
-        if self.kms_config and not self.kms_config.advance_switch:
+        if self.kms_config and self.kms_config.force_low_version_crypto_transfer:
             self.handlers[ENCRYPT_API_NAME] = EncryptTransferHandler(self.client, ENCRYPT_API_NAME, self.kms_config)
             self.handlers[DECRYPT_API_NAME] = DecryptTransferHandler(self.client, DECRYPT_API_NAME, self.kms_config)
             self.handlers[GENERATE_DATA_KEY_API_NAME] = \
