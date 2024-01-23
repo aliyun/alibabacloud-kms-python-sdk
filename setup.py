@@ -17,7 +17,7 @@ DESCRIPTION = "Alibaba Cloud KMS Python SDK"
 AUTHOR = "Alibaba Cloud SDK"
 AUTHOR_EMAIL = "sdk-team@alibabacloud.com"
 URL = "https://github.com/aliyun/alibabacloud-kms-python-sdk"
-VERSION = "1.1.2"
+VERSION = "1.1.3"
 REQUIRES = [
     'alibabacloud_dkms_gcs==1.0.2',
     'alibabacloud_kms20160120>=2.0.2,<3.0.0',
