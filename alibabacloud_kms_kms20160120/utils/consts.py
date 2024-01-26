@@ -27,6 +27,6 @@ ALGORITHM_LENGTH = 1
 CIPHER_VER = 0
 ALG_AES_GCM = b'\x02'
 SDK_NAME = "alibabacloud-kms-python-sdk"
-SDK_VERSION = "1.1.2"
+SDK_VERSION = "1.1.3"
 CLIENT_USER_AGENT = SDK_NAME + "-client/" + SDK_VERSION
 TRANSFER_CLIENT_USER_AGENT = SDK_NAME + "-transfer-client/" + SDK_VERSION

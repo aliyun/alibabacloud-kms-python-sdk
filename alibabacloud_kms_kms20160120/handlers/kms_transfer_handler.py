@@ -15,6 +15,13 @@ def get_missing_parameter_client_exception(param_name):
     })
 
 
+def get_invalid_parameter_client_exception(param_name):
+    return TeaException({
+        'code': INVALID_PARAMETER_ERROR_CODE,
+        'message': "The parameter  %s  is invalid." % param_name
+    })
+
+
 def transfer_kms_exception(e: TeaException):
     if e.code == INVALID_PARAM_ERROR_CODE:
         if e.message == INVALID_PARAM_DATE_ERROR_MESSAGE:
