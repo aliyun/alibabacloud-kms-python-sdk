@@ -8,7 +8,7 @@ from sdk.client import Client as DKmsClient
 from sdk.models import AdvanceDecryptRequest
 
 from alibabacloud_kms_kms20160120.handlers.kms_transfer_handler import get_missing_parameter_client_exception, \
-    KmsTransferHandler
+    KmsTransferHandler, get_invalid_parameter_client_exception
 from alibabacloud_kms_kms20160120.models import KmsRuntimeOptions, KmsConfig
 from alibabacloud_kms_kms20160120.utils import consts, encryption_context_utils
 from alibabacloud_kms_kms20160120.utils.consts import *
@@ -34,6 +34,8 @@ class AdvanceDecryptTransferHandler(KmsTransferHandler):
         if not request.query.get('CiphertextBlob'):
             raise get_missing_parameter_client_exception('CiphertextBlob')
         ciphertext_blob_bytes = base64.b64decode(request.query.get('CiphertextBlob'))
+        if len(ciphertext_blob_bytes) <= consts.EKT_ID_LENGTH + consts.GCM_IV_LENGTH:
+            raise get_invalid_parameter_client_exception("CiphertextBlob")
         iv_bytes = ciphertext_blob_bytes[consts.EKT_ID_LENGTH:EKT_ID_LENGTH + GCM_IV_LENGTH]
         cipher_ver_and_padding_mode = CIPHER_VER << 4 | 0
         ciphertext_bytes = MAGIC_NUM + cipher_ver_and_padding_mode.to_bytes(length=1, byteorder='big',
